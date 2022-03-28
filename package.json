@@ -1,0 +1,18 @@
+{
+  "name": "test-echo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build-frontend": "cd frontend && npm install && npm run build && cd ..",
+    "install-backend-dependencies": "npm install",
+    "deploy": "npm run build-frontend && npm run install-backend-dependencies && npm run deploy-whole-app",
+    "deploy-whole-app": "serverless deploy --verbose"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "serverless-s3-sync": "^3.0.0"
+  }
+}
