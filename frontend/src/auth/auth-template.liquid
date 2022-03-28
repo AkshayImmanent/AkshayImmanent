@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="{{locale}}">
+      <head>
+        {%- auth0:head -%}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <link rel="icon" type="image/x-icon" href="https://fundabl-frontend-react.s3.amazonaws.com/design-dev/images/company_logo.png" />
+        <!-- Bootstrap CSS -->
+        <link href="https://fundabl-frontend-react.s3.amazonaws.com/design-dev/css/bootstrap.min.css" rel="stylesheet" >
+        <!-- Custom CSS -->
+        <link href="https://fundabl-frontend-react.s3.amazonaws.com/design-dev/css/style.css" rel="stylesheet" >
+    
+        <title>{{ prompt.screen.texts.pageTitle }}</title>
+      </head>
+      <body className="log_page">
+        <!-- header -->
+        <header>
+            <div className="container">
+                <a className="navbar-brand" href="#page-top"><img src="images/fundabl.png"></a>
+            </div>
+        </header> 
+        <!-- header end-->
+        {% if prompt.name == "login" or prompt.name == "signup" %} 
+            <section className="logi_n">
+            {%- auth0:widget -%}
+            </section>
+        {% else %}
+            {%- auth0:widget -%}
+        {% endif %}
+        <!-- logi_n end -->
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://fundabl-frontend-react.s3.amazonaws.com/design-dev/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!--    <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> -->
+
+      </body>
+    </html>
